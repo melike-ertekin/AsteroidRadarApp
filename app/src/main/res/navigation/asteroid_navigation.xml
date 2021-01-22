@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/asteroid_navigation"
+    app:startDestination="@id/asteroidListFragment">
+
+    <fragment
+        android:id="@+id/asteroidListFragment"
+        android:name="com.example.asteroidradarapp.view.AsteroidListFragment"
+        android:label="AsteroidListFragment"
+        tools:layout="@layout/fragment_asteroid_list">
+        <action
+            android:id="@+id/action_showDetail"
+            app:destination="@id/detailAsteroidFragment" />
+        <argument
+            android:name="id"
+            app:argType="long" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailAsteroidFragment"
+        android:name="com.example.asteroidradarapp.view.DetailAsteroidFragment"
+        android:label="detail_asteroid_fragment"
+        tools:layout="@layout/fragment_item_asteroid">
+
+        <argument
+            android:name="selectedAsteroid"
+            app:argType="com.example.asteroidradarapp.domain.Asteroid" />
+    </fragment>
+</navigation>
